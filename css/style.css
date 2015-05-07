@@ -1,0 +1,27 @@
+html {
+
+}
+
+#wrapper {
+	width: 80vw;
+	height: 90vw;
+	margin: 5em auto;
+	background-color: pink;
+	text-align: center;
+	font-family: Futura;
+}
+
+#board {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.box {
+	height: 25.6vw;
+	width: 32%;
+	float: left;
+	background-color: gray;
+	border: black solid 2px;
+	font-size: 20vw;
+}
