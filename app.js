@@ -4,9 +4,9 @@ var turn = 1;
 function takeTurns(){
 	turn ++;
 	if (turn % 2 === 0){
-		return'<img src="http://pngimg.com/upload/money_PNG3545.png">';
-	}else return'<img src="http://i389.photobucket.com/albums/oo334/lil_diddy7/hundred_stacks_hyphy.png#stacks%20of%20money">';
-}
+		return'x';
+	}else return'o';
+}	
 
 chooseBox();	
 function chooseBox(){
@@ -21,23 +21,45 @@ function chooseBox(){
 }
 
 
-function winner() {
-	if (turn > 3) {
-		if((boxes[0].innerHTML === boxes[1].innerHTML && boxes[2].innerHTML) ||
-	    	(boxes[3].innerHTML === boxes[4].innerHTML && boxes[5].innerHTML) ||
-	    	(boxes[6].innerHTML === boxes[7].innerHTML && boxes[8].innerHTML) ||
-	    	(boxes[0].innerHTML === boxes[4].innerHTML && boxes[8].innerHTML) ||
-	    	(boxes[2].innerHTML === boxes[4].innerHTML && boxes[6].innerHTML) ||
-	    	(boxes[0].innerHTML === boxes[3].innerHTML && boxes[6].innerHTML) ||
-	    	(boxes[1].innerHTML === boxes[4].innerHTML && boxes[7].innerHTML) ||
-	    	(boxes[2].innerHTML === boxes[5].innerHTML && boxes[8].innerHTML)){
-			document.getElementById('announce').style.backgroundImage = 'url(work.gif)';	
-			document.getElementById('board').style.display = 'none';
-			document.getElementById('ban').style.fontSize = '12vw';
-			document.getElementById('ban').style.marginTop = '5em';
-		}else console.log("keep playing");
-	}		
+function winner(){
+	if( 
+		(  ((boxes[0].innerHTML === "x") && (boxes[1].innerHTML === "x") && (boxes[2].innerHTML === "x")) 
+    	 ||((boxes[3].innerHTML === "x") && (boxes[4].innerHTML === "x") && (boxes[5].innerHTML === "x"))
+    	 ||((boxes[6].innerHTML === "x") && (boxes[7].innerHTML === "x") && (boxes[8].innerHTML === "x"))
+    	 ||((boxes[0].innerHTML === "x") && (boxes[3].innerHTML === "x") && (boxes[6].innerHTML === "x"))
+    	 ||((boxes[1].innerHTML === "x") && (boxes[4].innerHTML === "x") && (boxes[7].innerHTML === "x"))
+    	 ||((boxes[2].innerHTML === "x") && (boxes[5].innerHTML === "x") && (boxes[8].innerHTML === "x"))
+    	 ||((boxes[0].innerHTML === "x") && (boxes[4].innerHTML === "x") && (boxes[8].innerHTML === "x"))
+    	 ||((boxes[2].innerHTML === "x") && (boxes[4].innerHTML === "x") && (boxes[6].innerHTML === "x"))
+    	) 
+ 
+		||
+
+		(  ((boxes[0].innerHTML === "o") && (boxes[1].innerHTML === "o") && (boxes[2].innerHTML === "o")) 
+    	 ||((boxes[3].innerHTML === "o") && (boxes[4].innerHTML === "o") && (boxes[5].innerHTML === "o"))
+    	 ||((boxes[6].innerHTML === "o") && (boxes[7].innerHTML === "o") && (boxes[8].innerHTML === "o"))
+    	 ||((boxes[0].innerHTML === "o") && (boxes[3].innerHTML === "o") && (boxes[6].innerHTML === "o"))
+    	 ||((boxes[1].innerHTML === "o") && (boxes[4].innerHTML === "o") && (boxes[7].innerHTML === "o"))
+    	 ||((boxes[2].innerHTML === "o") && (boxes[5].innerHTML === "o") && (boxes[8].innerHTML === "o"))
+    	 ||((boxes[0].innerHTML === "o") && (boxes[4].innerHTML === "o") && (boxes[8].innerHTML === "o"))
+    	 ||((boxes[2].innerHTML === "o") && (boxes[4].innerHTML === "o") && (boxes[6].innerHTML === "o"))
+    	)
+    ) 
+    {
+		document.getElementById('announce').style.backgroundImage = 'url(work.gif)';	
+		document.getElementById('board').style.display = 'none';
+		document.getElementById('ban').style.fontSize = '30vw';
+		document.getElementById('ban').style.marginTop = '.5em';
+		document.getElementById('ban').style.lineHeight = '1em';
+			// clearBoard()			
+	}else console.log("keep playing");	
 }
+
+// function clearBoard(){
+// 	for (var i = 0; i < boxes.length; i ++){
+// 		boxes[i].innerHTML = "";
+// 	}
+// }
 
 
 
